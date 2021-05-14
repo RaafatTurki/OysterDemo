@@ -1,0 +1,74 @@
+:root {
+  --bl: #000000;
+  --wh: #ffffff;
+  --war: #ed9831;
+  --err: #de3f4f;
+
+  --bg: #06050b;
+  --mg: #0a151f;
+  --fg: #434775;
+  --sel: #abaecf;
+
+  --fs: 10;
+  --fn: Terminus;
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: monospace;
+  font-size: 15px;
+}
+
+body {
+  background: var(--bg);
+  padding: 20px 40px;
+}
+
+/* basic blocks */
+.frame {
+  display: flex;
+}
+
+.segment {
+  flex-grow: 1;
+  padding: 10px;
+  margin: 5px;
+  display: flex;
+}
+.segment input {
+  border: none;
+  color: var(--sel);
+  background: none;
+  flex-grow: 1;
+}
+.segment .prompt_prefix,
+.segment .id_label {
+  color: var(--war);
+  padding: 0px 10px;
+}
+
+/* segment types */
+.stdin .segment input {
+  color: var(--sel);
+}
+
+.stdout .segment input {
+  color: var(--fg);
+}
+
+.stderr .segment input {
+  color: var(--err);
+}
+
+.stderr .segment,
+.stdin .segment,
+.stdout .segment {
+  background: var(--bg);
+}
+
+/* others */
+#active_prompt_segment.segment {
+  border-bottom: 1px solid var(--fg);
+}
